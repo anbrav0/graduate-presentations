@@ -11,7 +11,7 @@
   <meta name="generator" content="quarto-1.3.353">
 
   <meta name="author" content="Ana Bravo">
-  <title>Interpreting Data for Public Health Research Policy or Practice</title>
+  <title>Interpreting Data for Public Health, Research Policy, or Practice</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -325,7 +325,8 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Interpreting Data for Public Health Research Policy or Practice</h1>
+  <h1 class="title">Interpreting Data for Public Health, Research Policy, or Practice</h1>
+  <p class="subtitle">PHC6930C - Intergrative Seminar in Public Health</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -335,31 +336,85 @@ Ana Bravo
 </div>
 </div>
 
+  <p class="date">Invalid Date</p>
 </section>
-<section id="quarto" class="slide level2">
-<h2>Quarto</h2>
-<p>Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <a href="https://quarto.org/docs/presentations/" class="uri">https://quarto.org/docs/presentations/</a>.</p>
-</section>
-<section id="bullets" class="slide level2">
-<h2>Bullets</h2>
-<p>When you click the <strong>Render</strong> button a document will be generated that includes:</p>
+<section id="objectives" class="slide level2">
+<h2>Objectives</h2>
 <ul>
-<li>Content authored with markdown</li>
-<li>Output from executable code</li>
+<li>Understand the process of data collection.</li>
+<li>Study designs / protocols</li>
+<li>Challenges with data</li>
+<li>How data is interpreted and what it means</li>
+<li>what I do in data science</li>
 </ul>
 </section>
-<section id="code" class="slide level2">
-<h2>Code</h2>
-<p>When you click the <strong>Render</strong> button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:</p>
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<section id="introduction" class="slide level2">
+<h2>Introduction</h2>
+<p>A little bit about me</p>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">In my past life:</a></li><li><a href="#tabset-1-2">Currently:</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<ul>
+<li>Mathematics tutor</li>
+<li>Research assistant</li>
+<li>Lab instructor</li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<ul>
+<li>Amateur Cook</li>
+<li>Non-profit board of directors for an LGBT+ org</li>
+<li>Data scientist from time to time</li>
+</ul>
+<div class="footer">
+<p><a href="https://anbrav0.github.io/" class="uri">https://anbrav0.github.io/</a></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="objectives-1" class="slide level2">
+<h2>Objectives</h2>
+<p>Because I come from the research collection world, we’re going to talk about a few things that i do:</p>
+<ul>
+<li>Study designs and your protocol</li>
+<li>Understanding the beginnings of data collection</li>
+<li>Challenges with data/data collection</li>
+<li>How to (intro) data science with your data (the meat of todays topic)</li>
+</ul>
+</section>
+<section>
+<section id="study-design-and-protocol" class="title-slide slide level1 center">
+<h1>Study Design and protocol</h1>
+
+</section>
+<section id="what-is-it-that-you-want-to-do" class="slide level2">
+<h2>what is it that you want to do?</h2>
+<div style="font-size:25px">
+<ul>
+<li><p>What are you trying to investigate?</p>
+<ul>
+<li><p>Ex: what are factors that contribute to achievement gaps?</p></li>
+<li><p>Ex: Do certain activities in school lead to better health outcomes?</p></li>
+<li><p>Does the use of alcohol, marijuana, and tobacco lead to use of other substances?</p></li>
+</ul></li>
+<li><p>What is the significance of your design?</p></li>
+<li><p>What does the research say about your topic?</p></li>
+<li><p>It is important to be familiar with what other scientists have discovered so far.</p></li>
+<li><p>Are there any gaps in the work?</p>
+<ul>
+<li>For ex: problem: there is a lot of data on childhood outcomes and diseases, but a lot of the research sometimes is after infection/or the disease has already progressed or already symptomatic. Solution -&gt; understand the social, emotional, and behavioral activities through time (longitudinal) of a youth through their childhood, adolescent, and early adult development, so what are some of the factors that may have led to these events.</li>
+</ul></li>
+</ul>
+<div class="footer">
+<p><a href="https://abcdstudy.org/about/" class="uri">https://abcdstudy.org/about/</a></p>
 </div>
 </div>
 <div class="footer footer-default">
 
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -571,44 +626,6 @@ Ana Bravo
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

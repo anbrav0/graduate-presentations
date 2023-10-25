@@ -1,25 +1,79 @@
 ---
-title: "Interpreting Data for Public Health Research Policy or Practice"
+title: "Interpreting Data for Public Health, Research Policy, or Practice"
+subtitle: "PHC6930C - Intergrative Seminar in Public Health"
 author: "Ana Bravo"
-format: revealjs
+date: "`r format(Sys.time(), '%b %d, %Y')`"
+format:
+  revealjs: 
+    theme: simple
 editor: visual
 ---
 
-## Quarto
+## Objectives
 
-Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+-   Understand the process of data collection.
+-   Study designs / protocols
+-   Challenges with data
+-   How data is interpreted and what it means
+-   what I do in data science
 
-## Bullets
+## Introduction
 
-When you click the **Render** button a document will be generated that includes:
+A little bit about me
 
--   Content authored with markdown
--   Output from executable code
+::: panel-tabset
+### In my past life:
 
-## Code
+-   Mathematics tutor
+-   Research assistant
+-   Lab instructor
 
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+### Currently:
 
-```{r}
-1 + 1
-```
+-   Amateur Cook
+-   Non-profit board of directors for an LGBT+ org
+-   Data scientist from time to time
+
+::: footer
+<https://anbrav0.github.io/>
+:::
+:::
+
+## Objectives
+
+Because I come from the research collection world, we're going to talk about a few things that i do:
+
+-   Study designs and your protocol
+-   Understanding the beginnings of data collection
+-   Challenges with data/data collection
+-   How to (intro) data science with your data (the meat of todays topic)
+
+# Study Design and protocol
+
+## what is it that you want to do?
+
+::: {style="font-size:25px"}
+-   What are you trying to investigate?
+
+    -   Ex: what are factors that contribute to achievement gaps?
+
+    -   Ex: Do certain activities in school lead to better health outcomes?
+
+    -   Does the use of alcohol, marijuana, and tobacco lead to use of other substances?
+
+-   What is the significance of your design?
+
+-   What does the research say about your topic?
+
+-   It is important to be familiar with what other scientists have discovered so far.
+
+-   Are there any gaps in the work?
+
+    -    For ex: problem: there is a lot of data on childhood outcomes and diseases, but a lot of the research sometimes is after infection/or the disease has already progressed or already symptomatic. Solution -\> understand the social, emotional, and behavioral activities through time (longitudinal) of a youth through their childhood, adolescent, and early adult development, so what are some of the factors that may have led to these events.
+    
+::: footer
+<https://abcdstudy.org/about/>
+:::
+
+
+:::
