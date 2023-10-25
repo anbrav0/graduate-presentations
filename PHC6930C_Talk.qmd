@@ -173,4 +173,6 @@ why is this important to do? What is the significance of this?
 :::
 
 
+## Why am I talking about this as a data scientists? 👩‍🔬 
+
 
