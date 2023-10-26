@@ -470,27 +470,20 @@ summary(RandIntModel_Mollusca)
 :::
 :::
 
+## Resources
 
-## Resources 
+1.  R for Data Science (https://r4ds.hadley.nz)
 
-1. R for Data Science (https://r4ds.hadley.nz)
+2.  Modeling with R (https://www.tmwr.org)
 
-2. Modeling with R (https://www.tmwr.org)
+3.  An Introduction to Statistical Learning with applications in R (https://www.statlearning.com)
 
-3. An Introduction to Statistical Learning with applications in R (https://www.statlearning.com)
+4.  R for the Rest of Us (https://rfortherestofus.com)
 
-4. R for the Rest of Us (https://rfortherestofus.com)
+5.  modern statistics with R (https://www.modernstatisticswithr.com)
 
-5. modern statistics with R (https://www.modernstatisticswithr.com)
+6.  R for Epidemiology (https://www.r4epi.com/)
 
-6. R for Epidemiology (https://www.r4epi.com/)
+7.  A Quart o' {rUM} (Using the {rUM} Package for Reproducible Medical Research) (https://www.youtube.com/watch?v=tiwx8mSUL1c&t=128s)
 
-7. A Quart o' {rUM} (Using the {rUM} Package for Reproducible Medical Research) (https://www.youtube.com/watch?v=tiwx8mSUL1c&t=128s)
-
-
-# Thank you! 🙏 
-
-
-
-
-
+# Thank you! 🙏
