@@ -1,0 +1,4 @@
+- source: PHC6930C_Talk.qmd
+  quarto-pub:
+    - id: ae28e481-bede-4562-ba0a-bc463569b22e
+      url: 'https://abrav043.quarto.pub/interpreting-data-for-public-health-research-policy-or-practice'
