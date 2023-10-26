@@ -23,6 +23,8 @@ editor: visual
 
 A little bit about me
 
+::: columns
+::: {.column width="70%"}
 ::: panel-tabset
 ### In my past life:
 
@@ -35,6 +37,12 @@ A little bit about me
 -   Amateur Cook 👩‍🍳
 -   Non-profit board of directors for an LGBT+ org
 -   Data scientist from time to time 🥸
+:::
+:::
+
+::: {.column width="30%"}
+![](me.jpeg)
+:::
 
 ::: footer
 <https://anbrav0.github.io/>
@@ -312,3 +320,177 @@ to ensure that your work is reproducible you should use code 👩‍💻
 ::: {.column width="100%"}
 ![correlation matrix i needed to do to check out the correlation between certain items in a research study](correlation_matrix.png)
 :::
+
+## Modeling Data
+
+check out the link below for developing good statistical practice when modeling with R.
+
+-   if relationships exist between two variables, it may appear as pattern in your data (thats why EDA is important because it may give you hints about these patterns)
+    -   ask yourself if these patterns are due:
+        -   to random chance
+        -   how are you able to describe the relationship that implies this pattern
+        -   what variable might be affecting this relationship?
+
+::: {.column width="100%"}
+![](random_intercept_example.png){fig-align="center"}
+:::
+
+::: footer
+[developing good statistical practice with R](https://www.tmwr.org)
+:::
+
+## in my work now:
+
+-   i've had to implament every aspect of what we just talked about including
+    -   mutating or transforming the data
+
+```{r}
+#| message: false
+#| echo: true
+
+library(tidyverse)
+
+starwars |> 
+  select(name, mass, species) |> 
+  group_by(species) |> 
+  mutate(mass_norm = mass / mean(mass, na.rm = TRUE))
+
+
+
+```
+
+-   categorizing or grouping
+
+```{r}
+#| message: false
+#| echo: true
+
+mtcars |> 
+  mutate(cg = case_when(
+    carb <= 2 ~ "low",
+    carb > 2 ~ "high"
+  ))
+
+```
+
+-   transforming the shape of the data
+
+```{r}
+#| message: false
+#| echo: true
+
+# columns character data - this data is in wide form
+relig_income
+
+# turn wide data to long data for easier categorization
+relig_income |> 
+  pivot_longer(!religion, names_to = "income", values_to = "count")
+
+```
+
+-   create functions to automate my work
+
+```{r}
+#| message: false
+#| echo: true
+#| eval: false
+
+# create empty list for matched data
+matching_data <- list()
+
+# Loop through the CSV files
+for (csv_file in csv_files) {
+  # Extract record ID from the file name
+  record_id <- gsub(".csv$", "", basename(csv_file))
+  
+  # Check if the record ID matches any pattern in filtered_data
+  if (any(sapply(filtered_data$study_id, function(pattern) grepl(pattern, record_id)))) {
+    # Read the CSV file
+    csv_data <- read_csv(csv_file)
+    
+    # Add the matching data to the list
+    matching_data[[length(matching_data) + 1]] <- csv_data
+  }
+}
+
+# make new df with matched observations
+combined_data <- bind_rows(matching_data)
+
+# plyr:rbind works and add NA values to missing values
+matching_data |> 
+  plyr::rbind.fill() 
+
+
+
+```
+
+-   model my data
+
+```{r}
+#| message: false
+#| echo: false
+#| eval: true
+
+# read clean data 
+PLD <- read_table("/Users/anabravo/Library/CloudStorage/OneDrive-Personal/FIU Related/Graduate/MPH Biostatistics/graduate-presentations/PLD.txt")
+
+```
+
+```{r}
+#| message: false
+#| echo: true
+#| eval: true
+
+library(lme4)
+
+# subset mollusca only
+Mollusca_subset <- 
+  PLD |> 
+  filter(phylum == "Mollusca")
+
+# creating log -transformed variables 
+Mollusca_subset$log_pld <- log(Mollusca_subset$pld)
+Mollusca_subset$log_temp <- log(Mollusca_subset$temp)
+
+# mixed model with random intercept only 
+RandIntModel_Mollusca <- lmer(log_pld ~ log_temp + (1 | species), data = Mollusca_subset)
+
+# summary of model fit
+summary(RandIntModel_Mollusca)
+
+```
+
+::: {style="font-size:25px"}
+**interpretation of temp variable** for the fixed part, we can interpret this parameter the same as a single-level regression model, [so $\beta_1$ is the increase/decrease in response for 1 unit increase/decrease in $x.$]{style="background-color:yellow"} In other words, for one unit increase in the degrees of temperature, there is a -1.5 decrease in Planktonic larval duration. (or, as the temperature increase, the plankton duration is lower.)
+:::
+
+::: {style="footer-size:9px"}
+::: footer
+[Random Intercept Model - Planktonic larval duration tutorial](https://anbrav0.github.io/R-health-blog/RandomInterceptModel.html)
+:::
+:::
+
+
+## Resources 
+
+1. R for Data Science (https://r4ds.hadley.nz)
+
+2. Modeling with R (https://www.tmwr.org)
+
+3. An Introduction to Statistical Learning with applications in R (https://www.statlearning.com)
+
+4. R for the Rest of Us (https://rfortherestofus.com)
+
+5. modern statistics with R (https://www.modernstatisticswithr.com)
+
+6. R for Epidemiology (https://www.r4epi.com/)
+
+7. A Quart o' {rUM} (Using the {rUM} Package for Reproducible Medical Research) (https://www.youtube.com/watch?v=tiwx8mSUL1c&t=128s)
+
+
+# Thank you! 🙏 
+
+
+
+
+

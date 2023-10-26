@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="PHC6930C_Talk_files/libs/revealjs/dist/theme/quarto.css">
   <link href="PHC6930C_Talk_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -353,6 +418,8 @@ Ana Bravo
 <section id="introduction" class="slide level2">
 <h2>Introduction</h2>
 <p>A little bit about me</p>
+<div class="columns">
+<div class="column" style="width:70%;">
 <div class="panel-tabset">
 <ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">In my past life:</a></li><li><a href="#tabset-1-2">Currently:</a></li></ul>
 <div class="tab-content">
@@ -369,10 +436,13 @@ Ana Bravo
 <li>Non-profit board of directors for an LGBT+ org</li>
 <li>Data scientist from time to time 🥸</li>
 </ul>
-<div class="footer">
+</div>
+</div>
+</div>
+</div><div class="column" style="width:30%;">
+<p><img data-src="me.jpeg"></p>
+</div><div class="footer">
 <p><a href="https://anbrav0.github.io/" class="uri">https://anbrav0.github.io/</a></p>
-</div>
-</div>
 </div>
 </div>
 </section>
@@ -752,10 +822,264 @@ Ana Bravo
 </figure>
 </div>
 </div>
+</section>
+<section id="modeling-data" class="slide level2">
+<h2>Modeling Data</h2>
+<p>check out the link below for developing good statistical practice when modeling with R.</p>
+<ul>
+<li>if relationships exist between two variables, it may appear as pattern in your data (thats why EDA is important because it may give you hints about these patterns)
+<ul>
+<li>ask yourself if these patterns are due:
+<ul>
+<li>to random chance</li>
+<li>how are you able to describe the relationship that implies this pattern</li>
+<li>what variable might be affecting this relationship?</li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="column" style="width:100%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="random_intercept_example.png"></p>
+</figure>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://www.tmwr.org">developing good statistical practice with R</a></p>
+</div>
+</section>
+<section id="in-my-work-now" class="slide level2">
+<h2>in my work now:</h2>
+<ul>
+<li>i’ve had to implament every aspect of what we just talked about including
+<ul>
+<li>mutating or transforming the data</li>
+</ul></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>starwars <span class="sc">|&gt;</span> </span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="fu">select</span>(name, mass, species) <span class="sc">|&gt;</span> </span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="fu">mutate</span>(<span class="at">mass_norm =</span> mass <span class="sc">/</span> <span class="fu">mean</span>(mass, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 87 × 4
+# Groups:   species [38]
+   name                mass species mass_norm
+   &lt;chr&gt;              &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;
+ 1 Luke Skywalker        77 Human       0.930
+ 2 C-3PO                 75 Droid       1.08 
+ 3 R2-D2                 32 Droid       0.459
+ 4 Darth Vader          136 Human       1.64 
+ 5 Leia Organa           49 Human       0.592
+ 6 Owen Lars            120 Human       1.45 
+ 7 Beru Whitesun lars    75 Human       0.906
+ 8 R5-D4                 32 Droid       0.459
+ 9 Biggs Darklighter     84 Human       1.01 
+10 Obi-Wan Kenobi        77 Human       0.930
+# ℹ 77 more rows</code></pre>
+</div>
+</div>
+<ul>
+<li>categorizing or grouping</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">mutate</span>(<span class="at">cg =</span> <span class="fu">case_when</span>(</span>
+<span id="cb3-3"><a href="#cb3-3"></a>    carb <span class="sc">&lt;=</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"low"</span>,</span>
+<span id="cb3-4"><a href="#cb3-4"></a>    carb <span class="sc">&gt;</span> <span class="dv">2</span> <span class="sc">~</span> <span class="st">"high"</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>  ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb   cg
+Mazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4 high
+Mazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4 high
+Datsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1  low
+Hornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1  low
+Hornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2  low
+Valiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1  low
+Duster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4 high
+Merc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2  low
+Merc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2  low
+Merc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4 high
+Merc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4 high
+Merc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3 high
+Merc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3 high
+Merc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3 high
+Cadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4 high
+Lincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4 high
+Chrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4 high
+Fiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1  low
+Honda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2  low
+Toyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1  low
+Toyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1  low
+Dodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2  low
+AMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2  low
+Camaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4 high
+Pontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2  low
+Fiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1  low
+Porsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2  low
+Lotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2  low
+Ford Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4 high
+Ferrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6 high
+Maserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8 high
+Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2  low</code></pre>
+</div>
+</div>
+<ul>
+<li>transforming the shape of the data</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="co"># columns character data - this data is in wide form</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>relig_income</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 11
+   religion `&lt;$10k` `$10-20k` `$20-30k` `$30-40k` `$40-50k` `$50-75k` `$75-100k`
+   &lt;chr&gt;      &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;      &lt;dbl&gt;
+ 1 Agnostic      27        34        60        81        76       137        122
+ 2 Atheist       12        27        37        52        35        70         73
+ 3 Buddhist      27        21        30        34        33        58         62
+ 4 Catholic     418       617       732       670       638      1116        949
+ 5 Don’t k…      15        14        15        11        10        35         21
+ 6 Evangel…     575       869      1064       982       881      1486        949
+ 7 Hindu          1         9         7         9        11        34         47
+ 8 Histori…     228       244       236       238       197       223        131
+ 9 Jehovah…      20        27        24        24        21        30         15
+10 Jewish        19        19        25        25        30        95         69
+11 Mainlin…     289       495       619       655       651      1107        939
+12 Mormon        29        40        48        51        56       112         85
+13 Muslim         6         7         9        10         9        23         16
+14 Orthodox      13        17        23        32        32        47         38
+15 Other C…       9         7        11        13        13        14         18
+16 Other F…      20        33        40        46        49        63         46
+17 Other W…       5         2         3         4         2         7          3
+18 Unaffil…     217       299       374       365       341       528        407
+# ℹ 3 more variables: `$100-150k` &lt;dbl&gt;, `&gt;150k` &lt;dbl&gt;,
+#   `Don't know/refused` &lt;dbl&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="co"># turn wide data to long data for easier categorization</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>relig_income <span class="sc">|&gt;</span> </span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">pivot_longer</span>(<span class="sc">!</span>religion, <span class="at">names_to =</span> <span class="st">"income"</span>, <span class="at">values_to =</span> <span class="st">"count"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 180 × 3
+   religion income             count
+   &lt;chr&gt;    &lt;chr&gt;              &lt;dbl&gt;
+ 1 Agnostic &lt;$10k                 27
+ 2 Agnostic $10-20k               34
+ 3 Agnostic $20-30k               60
+ 4 Agnostic $30-40k               81
+ 5 Agnostic $40-50k               76
+ 6 Agnostic $50-75k              137
+ 7 Agnostic $75-100k             122
+ 8 Agnostic $100-150k            109
+ 9 Agnostic &gt;150k                 84
+10 Agnostic Don't know/refused    96
+# ℹ 170 more rows</code></pre>
+</div>
+</div>
+<ul>
+<li>create functions to automate my work</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="co"># create empty list for matched data</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>matching_data <span class="ot">&lt;-</span> <span class="fu">list</span>()</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="co"># Loop through the CSV files</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="cf">for</span> (csv_file <span class="cf">in</span> csv_files) {</span>
+<span id="cb9-6"><a href="#cb9-6"></a>  <span class="co"># Extract record ID from the file name</span></span>
+<span id="cb9-7"><a href="#cb9-7"></a>  record_id <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">".csv$"</span>, <span class="st">""</span>, <span class="fu">basename</span>(csv_file))</span>
+<span id="cb9-8"><a href="#cb9-8"></a>  </span>
+<span id="cb9-9"><a href="#cb9-9"></a>  <span class="co"># Check if the record ID matches any pattern in filtered_data</span></span>
+<span id="cb9-10"><a href="#cb9-10"></a>  <span class="cf">if</span> (<span class="fu">any</span>(<span class="fu">sapply</span>(filtered_data<span class="sc">$</span>study_id, <span class="cf">function</span>(pattern) <span class="fu">grepl</span>(pattern, record_id)))) {</span>
+<span id="cb9-11"><a href="#cb9-11"></a>    <span class="co"># Read the CSV file</span></span>
+<span id="cb9-12"><a href="#cb9-12"></a>    csv_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(csv_file)</span>
+<span id="cb9-13"><a href="#cb9-13"></a>    </span>
+<span id="cb9-14"><a href="#cb9-14"></a>    <span class="co"># Add the matching data to the list</span></span>
+<span id="cb9-15"><a href="#cb9-15"></a>    matching_data[[<span class="fu">length</span>(matching_data) <span class="sc">+</span> <span class="dv">1</span>]] <span class="ot">&lt;-</span> csv_data</span>
+<span id="cb9-16"><a href="#cb9-16"></a>  }</span>
+<span id="cb9-17"><a href="#cb9-17"></a>}</span>
+<span id="cb9-18"><a href="#cb9-18"></a></span>
+<span id="cb9-19"><a href="#cb9-19"></a><span class="co"># make new df with matched observations</span></span>
+<span id="cb9-20"><a href="#cb9-20"></a>combined_data <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(matching_data)</span>
+<span id="cb9-21"><a href="#cb9-21"></a></span>
+<span id="cb9-22"><a href="#cb9-22"></a><span class="co"># plyr:rbind works and add NA values to missing values</span></span>
+<span id="cb9-23"><a href="#cb9-23"></a>matching_data <span class="sc">|&gt;</span> </span>
+<span id="cb9-24"><a href="#cb9-24"></a>  plyr<span class="sc">::</span><span class="fu">rbind.fill</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>model my data</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb10-2"><a href="#cb10-2"></a></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="co"># subset mollusca only</span></span>
+<span id="cb10-4"><a href="#cb10-4"></a>Mollusca_subset <span class="ot">&lt;-</span> </span>
+<span id="cb10-5"><a href="#cb10-5"></a>  PLD <span class="sc">|&gt;</span> </span>
+<span id="cb10-6"><a href="#cb10-6"></a>  <span class="fu">filter</span>(phylum <span class="sc">==</span> <span class="st">"Mollusca"</span>)</span>
+<span id="cb10-7"><a href="#cb10-7"></a></span>
+<span id="cb10-8"><a href="#cb10-8"></a><span class="co"># creating log -transformed variables </span></span>
+<span id="cb10-9"><a href="#cb10-9"></a>Mollusca_subset<span class="sc">$</span>log_pld <span class="ot">&lt;-</span> <span class="fu">log</span>(Mollusca_subset<span class="sc">$</span>pld)</span>
+<span id="cb10-10"><a href="#cb10-10"></a>Mollusca_subset<span class="sc">$</span>log_temp <span class="ot">&lt;-</span> <span class="fu">log</span>(Mollusca_subset<span class="sc">$</span>temp)</span>
+<span id="cb10-11"><a href="#cb10-11"></a></span>
+<span id="cb10-12"><a href="#cb10-12"></a><span class="co"># mixed model with random intercept only </span></span>
+<span id="cb10-13"><a href="#cb10-13"></a>RandIntModel_Mollusca <span class="ot">&lt;-</span> <span class="fu">lmer</span>(log_pld <span class="sc">~</span> log_temp <span class="sc">+</span> (<span class="dv">1</span> <span class="sc">|</span> species), <span class="at">data =</span> Mollusca_subset)</span>
+<span id="cb10-14"><a href="#cb10-14"></a></span>
+<span id="cb10-15"><a href="#cb10-15"></a><span class="co"># summary of model fit</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a><span class="fu">summary</span>(RandIntModel_Mollusca)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Linear mixed model fit by REML ['lmerMod']
+Formula: log_pld ~ log_temp + (1 | species)
+   Data: Mollusca_subset
+
+REML criterion at convergence: 43.7
+
+Scaled residuals: 
+     Min       1Q   Median       3Q      Max 
+-2.37222 -0.32686 -0.09382  0.43821  2.34871 
+
+Random effects:
+ Groups   Name        Variance Std.Dev.
+ species  (Intercept) 0.86457  0.9298  
+ Residual             0.03309  0.1819  
+Number of obs: 44, groups:  species, 16
+
+Fixed effects:
+            Estimate Std. Error t value
+(Intercept)   7.1728     0.5284  13.575
+log_temp     -1.5175     0.1592  -9.531
+
+Correlation of Fixed Effects:
+         (Intr)
+log_temp -0.896</code></pre>
+</div>
+</div>
+<div style="font-size:25px">
+<p><strong>interpretation of temp variable</strong> for the fixed part, we can interpret this parameter the same as a single-level regression model, <span style="background-color:yellow">so <span class="math inline">\(\beta_1\)</span> is the increase/decrease in response for 1 unit increase/decrease in <span class="math inline">\(x.\)</span></span> In other words, for one unit increase in the degrees of temperature, there is a -1.5 decrease in Planktonic larval duration. (or, as the temperature increase, the plankton duration is lower.)</p>
+</div>
+<div style="footer-size:9px">
+<div class="footer">
+<p><a href="https://anbrav0.github.io/R-health-blog/RandomInterceptModel.html">Random Intercept Model - Planktonic larval duration tutorial</a></p>
+</div>
+</div>
+</section>
+<section id="resources" class="slide level2">
+<h2>Resources</h2>
+<ol type="1">
+<li><p>R for Data Science (https://r4ds.hadley.nz)</p></li>
+<li><p>Modeling with R (https://www.tmwr.org)</p></li>
+<li><p>An Introduction to Statistical Learning with applications in R (https://www.statlearning.com)</p></li>
+<li><p>R for the Rest of Us (https://rfortherestofus.com)</p></li>
+<li><p>modern statistics with R (https://www.modernstatisticswithr.com)</p></li>
+<li><p>R for Epidemiology (https://www.r4epi.com/)</p></li>
+<li><p>A Quart o’ {rUM} (Using the {rUM} Package for Reproducible Medical Research) (https://www.youtube.com/watch?v=tiwx8mSUL1c&amp;t=128s)</p></li>
+</ol>
+</section></section>
+<section id="thank-you" class="title-slide slide level1 center">
+<h1>Thank you! 🙏</h1>
 <div class="footer footer-default">
 
 </div>
-</section></section>
+</section>
     </div>
   </div>
 
@@ -967,6 +1291,44 @@ Ana Bravo
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
