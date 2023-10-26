@@ -2,10 +2,12 @@
 title: "Interpreting Data for Public Health, Research Policy, or Practice"
 subtitle: "PHC6930C - Intergrative Seminar in Public Health"
 author: "Ana Bravo"
-date: "`r format(Sys.time(), '%b %d, %Y')`"
+date: now
 format:
   revealjs: 
     theme: simple
+    scrollable: true
+    slide-number: true
 editor: visual
 ---
 
@@ -174,5 +176,18 @@ why is this important to do? What is the significance of this?
 
 
 ## Why am I talking about this as a data scientists? 👩‍🔬 
+
+-	Through the entire stage of your study, from research question to protocol deployment, you should consider and have a team of experts,(including a data scientist, from the beginning!)
+-	Why?
+    - Because understanding the type of data you want to collect is important (data type)
+    - How to present your data findings (data visualization) 
+How do you want to answer your research question? (Regression? mixed- effects? Correlated data?, nested- data?)
+    - Reproducibility? 
+        - As researcher we have a duty to help other scientist be able to reproduce our same findings:
+
+to ensure that your work is reproducible you should use code 
+
+
+
 
 
