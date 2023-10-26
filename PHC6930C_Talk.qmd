@@ -144,50 +144,171 @@ Determine your aims
 ![](Picture1.jpg){fig-align="center" width="453"}
 :::
 
-### timeline 
+### timeline
 
-- how long will this study be running? for two years, three years?
-
+-   how long will this study be running? for two years, three years?
 
 ### conclusion
 
 ::: {style="font-size:25px"}
-
 why is this important to do? What is the significance of this?
 
--	Ex: what are factors that contribute to achievement gaps?
--	Ex: Do certain activities in school lead to better health outcomes?
--	Ex: Does the use of alcohol, marijuana, and tobacco lead to use of other substances?
+-   Ex: what are factors that contribute to achievement gaps?
 
-	A lot of the reason human subject research is investigated is in the hopes of leading to new policies and interventions/decisions about the study population: 
-   	- what are factors that contribute to achievement gaps?
-   	    - Leads to policy decision in curricula and other programs
-   	    
-    - How prevalent is traumatic brain injury (TBI) in student athletes?
-        - Assessment, education, precautions and changes in student athletics
-	      
-    -	Does the use of alcohol and marijuana and tobacco lead to use of other substances?
-        - Leads to substance use prevention and early interventions. 
+-   Ex: Do certain activities in school lead to better health outcomes?
 
+-   Ex: Does the use of alcohol, marijuana, and tobacco lead to use of other substances?
+
+    A lot of the reason human subject research is investigated is in the hopes of leading to new policies and interventions/decisions about the study population:
+
+    -   what are factors that contribute to achievement gaps?
+        -   Leads to policy decision in curricula and other programs
+    -   How prevalent is traumatic brain injury (TBI) in student athletes?
+        -   Assessment, education, precautions and changes in student athletics
+    -   Does the use of alcohol and marijuana and tobacco lead to use of other substances?
+        -   Leads to substance use prevention and early interventions.
+:::
 :::
 
+## Why am I talking about this as a data scientists? 👩‍🔬
 
+-   Through the entire stage of your study, from research question to protocol deployment, you should consider and have a team of experts,(including a data scientist, from the beginning!)
+-   Why?
+    -   Because understanding the type of data you want to collect is important (data type)
+    -   How to present your data findings (data visualization) How do you want to answer your research question? (Regression? mixed- effects? Correlated data?, nested- data?)
+    -   Reproducibility?
+        -   As researcher we have a duty to help other scientist be able to reproduce our same findings:
+
+to ensure that your work is reproducible you should use code 👩‍💻
+
+# A (gentle) introduction of how I do Data Science in my work
+
+## Why i learned how to code:
+
+-   if you are doing something repetitive, using a programming language can help you automate your work (using functions)
+-   in your code/manuscript, you are able to data visualizations straight from your data. (Quarto/ggplot)
+-   provides new tools for methodologies
+-   transparency and reproducibility for your work (Quarto)
+
+## What do I do in my DS world 🌍
+
+::: panel-tabset
+### Data prep
+
+-   Data preparation:
+    -   building redcap servers,
+    -   hosting any clinical or human subject research data instruments
+    -   building your survey items
+
+### EDA
+
+-   Explore the data:
+    -   What does my data look like?
+    -   what are the largest and smallest values in my data?
+    -   is this particular variable a "type in" form?
+    -   do I need to *transform* certain variables?
+    -   do we need to group certain categories?
+    -   in this step you also incorporate a little bit of visualizations
+
+### Compute
+
+-   what programming language will I use?
+    -   Do i need to use one to visualize, and a different one to model? (SAS to model, R to visualize?)
+    -   Are we planning on writing a manuscript, publish a paper, or present these findings?
+
+### Model
+
+-   Modeling your data:
+    -   what type of test will you be running for your data?
+    -   will you be running a t-test, linear regression, maybe a mixed effects model?
+    -   what type of questions did you ask? and what type of data do you have?
+        -   is this data correlated?
+        -   is this data nested?
+        -   do you have repeated measures?
+
+⭐️ important: you should consult with your team (PI, epidemoligist, and your Data Scientist) when asking these questions
+
+### Visualize
+
+-   Visualizing your data:
+    -   what story do you want to convey to your audience?
+        -   I think that science, especially if you are working with Community Based Research (CBR), should be accessible. Meaning, understandable to a wide audience. (doctors, people in health care, researchers, educators, and the community) plain english please.
+            -   [*legalese*](https://bcs.mit.edu/news/even-lawyers-dont-legalese) 🤢
+    -   are you planning on building plots, graphs, visuals, maybe checking the normality of your data?
 :::
 
+## Data Preparation phase
 
-## Why am I talking about this as a data scientists? 👩‍🔬 
+::: columns
+::: {.column width="50%"}
+-   There is a fantastic video by an Associate Professor at the University of Miami on building Redcap (what I consider the golden standard in data collection) to collect research data on HIV and substance abuse
+    -   Questions I need to consider are:
+        -   how will this project be developed?
+        -   how will you set up your instruments?
+        -   will you have redcap check for eligibility?
+        -   what variable type would you like your instruments to be?
+:::
 
--	Through the entire stage of your study, from research question to protocol deployment, you should consider and have a team of experts,(including a data scientist, from the beginning!)
--	Why?
-    - Because understanding the type of data you want to collect is important (data type)
-    - How to present your data findings (data visualization) 
-How do you want to answer your research question? (Regression? mixed- effects? Correlated data?, nested- data?)
-    - Reproducibility? 
-        - As researcher we have a duty to help other scientist be able to reproduce our same findings:
+::: {.column width="50%"}
+![](Picture_redcappng.png){fig-align="center" width="439"}
+:::
 
-to ensure that your work is reproducible you should use code 
+::: footer
+[RedCap, HIV, Substance use - Raymond Balise](https://www.youtube.com/watch?v=GjiZm4OUgK0&t=92s)
+:::
+:::
 
+## Exploratory Data Analysis
 
+-   this part is *extremely* important to me, no matter what field you are in public health.
+-   the first thing I do, once I have the data, is see "what does my data even look like?"
+-   a basic overview of the EDA process is:
+    -   generating descriptive statistics 📊
+    -   check to see if I have any outliers
+    -   maybe see if there is any differences between groups:
+        -   e.g., calculating the average lifespan between men and women after a colorectal diagnosis
+    -   this process also may include "cleaning" your data up a bit.
+    -   this process is dynamic, and should be incorporated in every step
+    -   or maybe your curious of seeing the general trend in the relationship between planktonic larvae duration and temperature:
 
+::: {.column width="100%"}
+![](plantonic_trend.png){fig-align="center"}
+:::
 
+::: footer
+[EDA with the tidyverse/Rstudio](https://r4ds.hadley.nz/eda)
+:::
 
+## Computing the data
+
+-   What type of programming language are you planning on using for your research project?
+    -   personally in my work, I *always* set up a new project for team and use R/Quarto, keep folders called "raw data" , "clean data" , "outputs" "figures" neatly and organized in cloud based security server only accessible to my team. this method ensures i keep rigorous documentation of every step i handle the data. this method also allows me to:
+        -   include all my calculations (including modeling) in my code/manuscript.
+        -   maintain a tidy level of reproducability
+        -   and R is also *free.*
+            -   SAS is a wonderful and powerful tool, but if you do not have a membership outside the university setting it is hard to access.
+
+::: {.column width="100%"}
+![](manuscript_quarto_example.png){fig-align="center"}
+:::
+
+## Visualizing the data
+
+-   During my work, EDA process and creating visualizations go hand in hand. Remember, during your EDA, you are trying to investigate what your data is trying to tell you. It is important to become familiar with the data and asking the right questions
+    -   how does the variation between variables look like?
+    -   what does my distribution look like?
+-   when you understand or become familiar with the data you can visualize it to convey important messages to inform the public, thus leading the changes in policy, as well as drive decision making about the population.
+
+### Visuals example
+
+::: {.column width="100%"}
+![individuals who reported they had a good time (non-outlier) vs. individuals who reported they did not have a good time (outlier) participating in research](stacked_bar_plot_example.png){fig-align="center"}
+:::
+
+::: {.column width="100%"}
+![this was something i did for fun, checking out the distribution of 👽 sightings in America](alien_plot.png)
+:::
+
+::: {.column width="100%"}
+![correlation matrix i needed to do to check out the correlation between certain items in a research study](correlation_matrix.png)
+:::

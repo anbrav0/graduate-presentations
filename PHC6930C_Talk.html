@@ -550,7 +550,208 @@ Ana Bravo
 </ul></li>
 </ul></li>
 </ul>
-<p>to ensure that your work is reproducible you should use code</p>
+<p>to ensure that your work is reproducible you should use code 👩‍💻</p>
+</section></section>
+<section>
+<section id="a-gentle-introduction-of-how-i-do-data-science-in-my-work" class="title-slide slide level1 center">
+<h1>A (gentle) introduction of how I do Data Science in my work</h1>
+
+</section>
+<section id="why-i-learned-how-to-code" class="slide level2">
+<h2>Why i learned how to code:</h2>
+<ul>
+<li>if you are doing something repetitive, using a programming language can help you automate your work (using functions)</li>
+<li>in your code/manuscript, you are able to data visualizations straight from your data. (Quarto/ggplot)</li>
+<li>provides new tools for methodologies</li>
+<li>transparency and reproducibility for your work (Quarto)</li>
+</ul>
+</section>
+<section id="what-do-i-do-in-my-ds-world" class="slide level2">
+<h2>What do I do in my DS world 🌍</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Data prep</a></li><li><a href="#tabset-4-2">EDA</a></li><li><a href="#tabset-4-3">Compute</a></li><li><a href="#tabset-4-4">Model</a></li><li><a href="#tabset-4-5">Visualize</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<ul>
+<li>Data preparation:
+<ul>
+<li>building redcap servers,</li>
+<li>hosting any clinical or human subject research data instruments</li>
+<li>building your survey items</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-4-2">
+<ul>
+<li>Explore the data:
+<ul>
+<li>What does my data look like?</li>
+<li>what are the largest and smallest values in my data?</li>
+<li>is this particular variable a “type in” form?</li>
+<li>do I need to <em>transform</em> certain variables?</li>
+<li>do we need to group certain categories?</li>
+<li>in this step you also incorporate a little bit of visualizations</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-4-3">
+<ul>
+<li>what programming language will I use?
+<ul>
+<li>Do i need to use one to visualize, and a different one to model? (SAS to model, R to visualize?)</li>
+<li>Are we planning on writing a manuscript, publish a paper, or present these findings?</li>
+</ul></li>
+</ul>
+</div>
+<div id="tabset-4-4">
+<ul>
+<li>Modeling your data:
+<ul>
+<li>what type of test will you be running for your data?</li>
+<li>will you be running a t-test, linear regression, maybe a mixed effects model?</li>
+<li>what type of questions did you ask? and what type of data do you have?
+<ul>
+<li>is this data correlated?</li>
+<li>is this data nested?</li>
+<li>do you have repeated measures?</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>⭐️ important: you should consult with your team (PI, epidemoligist, and your Data Scientist) when asking these questions</p>
+</div>
+<div id="tabset-4-5">
+<ul>
+<li>Visualizing your data:
+<ul>
+<li>what story do you want to convey to your audience?
+<ul>
+<li>I think that science, especially if you are working with Community Based Research (CBR), should be accessible. Meaning, understandable to a wide audience. (doctors, people in health care, researchers, educators, and the community) plain english please.
+<ul>
+<li><a href="https://bcs.mit.edu/news/even-lawyers-dont-legalese"><em>legalese</em></a> 🤢</li>
+</ul></li>
+</ul></li>
+<li>are you planning on building plots, graphs, visuals, maybe checking the normality of your data?</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="data-preparation-phase" class="slide level2">
+<h2>Data Preparation phase</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li>There is a fantastic video by an Associate Professor at the University of Miami on building Redcap (what I consider the golden standard in data collection) to collect research data on HIV and substance abuse
+<ul>
+<li>Questions I need to consider are:
+<ul>
+<li>how will this project be developed?</li>
+<li>how will you set up your instruments?</li>
+<li>will you have redcap check for eligibility?</li>
+<li>what variable type would you like your instruments to be?</li>
+</ul></li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="Picture_redcappng.png" width="439"></p>
+</figure>
+</div>
+</div><div class="footer">
+<p><a href="https://www.youtube.com/watch?v=GjiZm4OUgK0&amp;t=92s">RedCap, HIV, Substance use - Raymond Balise</a></p>
+</div>
+</div>
+</section>
+<section id="exploratory-data-analysis" class="slide level2">
+<h2>Exploratory Data Analysis</h2>
+<ul>
+<li>this part is <em>extremely</em> important to me, no matter what field you are in public health.</li>
+<li>the first thing I do, once I have the data, is see “what does my data even look like?”</li>
+<li>a basic overview of the EDA process is:
+<ul>
+<li>generating descriptive statistics 📊</li>
+<li>check to see if I have any outliers</li>
+<li>maybe see if there is any differences between groups:
+<ul>
+<li>e.g., calculating the average lifespan between men and women after a colorectal diagnosis</li>
+</ul></li>
+<li>this process also may include “cleaning” your data up a bit.</li>
+<li>this process is dynamic, and should be incorporated in every step</li>
+<li>or maybe your curious of seeing the general trend in the relationship between planktonic larvae duration and temperature:</li>
+</ul></li>
+</ul>
+<div class="column" style="width:100%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="plantonic_trend.png"></p>
+</figure>
+</div>
+</div>
+<div class="footer">
+<p><a href="https://r4ds.hadley.nz/eda">EDA with the tidyverse/Rstudio</a></p>
+</div>
+</section>
+<section id="computing-the-data" class="slide level2">
+<h2>Computing the data</h2>
+<ul>
+<li>What type of programming language are you planning on using for your research project?
+<ul>
+<li>personally in my work, I <em>always</em> set up a new project for team and use R/Quarto, keep folders called “raw data” , “clean data” , “outputs” “figures” neatly and organized in cloud based security server only accessible to my team. this method ensures i keep rigorous documentation of every step i handle the data. this method also allows me to:
+<ul>
+<li>include all my calculations (including modeling) in my code/manuscript.</li>
+<li>maintain a tidy level of reproducability</li>
+<li>and R is also <em>free.</em>
+<ul>
+<li>SAS is a wonderful and powerful tool, but if you do not have a membership outside the university setting it is hard to access.</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+<div class="column" style="width:100%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="manuscript_quarto_example.png"></p>
+</figure>
+</div>
+</div>
+</section>
+<section id="visualizing-the-data" class="slide level2">
+<h2>Visualizing the data</h2>
+<ul>
+<li>During my work, EDA process and creating visualizations go hand in hand. Remember, during your EDA, you are trying to investigate what your data is trying to tell you. It is important to become familiar with the data and asking the right questions
+<ul>
+<li>how does the variation between variables look like?</li>
+<li>what does my distribution look like?</li>
+</ul></li>
+<li>when you understand or become familiar with the data you can visualize it to convey important messages to inform the public, thus leading the changes in policy, as well as drive decision making about the population.</li>
+</ul>
+<h3 id="visuals-example">Visuals example</h3>
+<div class="column" style="width:100%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="stacked_bar_plot_example.png"></p>
+<figcaption>individuals who reported they had a good time (non-outlier) vs.&nbsp;individuals who reported they did not have a good time (outlier) participating in research</figcaption>
+</figure>
+</div>
+</div>
+<div class="column" style="width:100%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="alien_plot.png"></p>
+<figcaption>this was something i did for fun, checking out the distribution of 👽 sightings in America</figcaption>
+</figure>
+</div>
+</div>
+<div class="column" style="width:100%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="correlation_matrix.png"></p>
+<figcaption>correlation matrix i needed to do to check out the correlation between certain items in a research study</figcaption>
+</figure>
+</div>
+</div>
 <div class="footer footer-default">
 
 </div>

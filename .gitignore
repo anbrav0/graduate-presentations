@@ -71,3 +71,8 @@
 *.zip
 *.Zip
 *.ZIP
+
+
+# png files 
+*.png
+
